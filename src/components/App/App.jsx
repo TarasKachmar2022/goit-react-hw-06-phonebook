@@ -1,19 +1,48 @@
-import { useEffect, useState } from 'react';
-import { nanoid } from 'nanoid';
+// import { useEffect, useState } from 'react';
 import { GlobalStyle } from '../../styled/globalStyle';
-import { FindContactsByName } from './App.styled';
 import { Layout } from '../Layout/Layout';
 import ContactForm from '../ContactForm';
 import ContactsFilter from '../ContactsFilter';
 import ContactList from '../ContactList';
+import { FindContactsByName, MainBlock } from './App.styled';
 
-const LS_KEY = 'contact_items';
-const initialValue = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-];
+// const LS_KEY = 'contact_items';
+
+// const getInitialContacts = () => {
+//   const savedContacts = JSON.parse(localStorage.getItem(LS_KEY));
+
+//   if (savedContacts !== null) {
+//     return savedContacts;
+//   } else {
+//     return initialState;
+//   }
+// };
+
+const App = () => {
+  // const [contacts, setContacts] = useState(getInitialContacts);
+  // const [filter, setFilter] = useState('');
+
+  // useEffect(() => {
+  //   localStorage.setItem(LS_KEY, JSON.stringify(contacts));
+  // }, [contacts]);
+
+  return (
+    <Layout>
+      <MainBlock>
+        <h1>Phonebook</h1>
+        <ContactForm />
+        <h2>Contacts</h2>
+        <FindContactsByName>Find contacts by name</FindContactsByName>
+        <ContactsFilter />
+        <ContactList />
+        <GlobalStyle />
+        <div></div>
+      </MainBlock>
+    </Layout>
+  );
+};
+
+export default App;
 
 // class App extends Component {
 //   state = {
@@ -27,7 +56,7 @@ const initialValue = [
 //     if (contactItems !== null) {
 //       this.setState({ contacts: contactItems });
 //     } else {
-//       this.setState({ contacts: initialValue });
+//       this.setState({ contacts: initialState });
 //     }
 //   }
 
@@ -101,70 +130,3 @@ const initialValue = [
 // }
 
 // export default App;
-
-const getInitialContacts = () => {
-  const savedContacts = JSON.parse(localStorage.getItem(LS_KEY));
-
-  if (savedContacts !== null) {
-    return savedContacts;
-  } else {
-    return initialValue;
-  }
-};
-
-const App = () => {
-  const [contacts, setContacts] = useState(getInitialContacts);
-  const [filter, setFilter] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem(LS_KEY, JSON.stringify(contacts));
-  }, [contacts]);
-
-  const addContact = newContact => {
-    const findContacts = contacts.find(
-      contact => contact.name === newContact.name
-    );
-
-    if (findContacts) {
-      alert(`${findContacts.name} is already in contacts.`);
-      return;
-    }
-
-    setContacts(prevState => [...prevState, { id: nanoid(), ...newContact }]);
-  };
-
-  const changeFilterValue = event => {
-    const { value } = event.currentTarget;
-
-    setFilter(value);
-  };
-
-  const getFilterContacts = () => {
-    const normalize = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalize)
-    );
-  };
-
-  const deleteContact = id => {
-    setContacts(contacts.filter(contact => contact.id !== id));
-  };
-
-  const visibleContacts = getFilterContacts();
-  return (
-    <Layout>
-      <h1>Phonebook</h1>
-      <ContactForm onSave={addContact} />
-      <h2>Contacts</h2>
-      <FindContactsByName>Find contacts by name</FindContactsByName>
-      <ContactsFilter
-        inputValue={filter}
-        changeFilterValue={changeFilterValue}
-      />
-      <ContactList contacts={visibleContacts} onDelete={deleteContact} />
-      <GlobalStyle />
-    </Layout>
-  );
-};
-
-export default App;

@@ -9,6 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(https://pixabay.com/get/g8b14361094644da3bbe045c3851cbed948124f1cc966d2320145791b53bf1043f61232cc04dfc778850b7c9d8616b4ae2885cf33c456fe0fd99a3878f16c5fe4_1280.jpg) 0 0 / cover no-repeat;
+  background-attachment: fixed;
 }
 
 code {

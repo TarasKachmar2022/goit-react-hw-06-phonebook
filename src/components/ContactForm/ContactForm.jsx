@@ -1,12 +1,16 @@
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
+import { nanoid } from 'nanoid';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Form,
   FormLabel,
   FormLabelSpan,
+  InputField,
   ErrorMessage,
   FormBtn,
 } from './ContactForm.styled';
+import { addContact } from 'redux/contactsSlice';
 
 // const PATTERN_FOR_NAME =
 //   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
@@ -27,14 +31,35 @@ const schema = yup.object().shape({
   number: yup.number().required(),
 });
 
-const ContactForm = ({ onSave }) => {
+const ContactForm = () => {
   const initialValues = {
     name: '',
     number: '',
   };
 
+  const contacts = useSelector(state => state.contacts.contacts);
+  const dispatch = useDispatch();
+  console.log(contacts);
+
   const handleSubmit = (values, { resetForm }) => {
-    onSave({ ...values });
+    const findContacts = contacts.find(
+      contact =>
+        contact.name.toLowerCase().trim() === values.name.toLowerCase().trim()
+    );
+
+    if (findContacts) {
+      alert(`${findContacts.name} is already in contacts.`);
+      return;
+    }
+
+    const newContact = {
+      id: nanoid(),
+      name: values.name,
+      number: values.number,
+    };
+
+    dispatch(addContact(newContact));
+
     resetForm();
   };
 
@@ -47,15 +72,15 @@ const ContactForm = ({ onSave }) => {
       <Form>
         <FormLabel htmlFor="name">
           <FormLabelSpan>Name</FormLabelSpan>
-          <Field name="name" />
+          <InputField id="name" type="text" name="name" />
           <ErrorMessage name="name" component="div" />
         </FormLabel>
         <FormLabel htmlFor="number">
           <FormLabelSpan>Number</FormLabelSpan>
-          <Field type="tel" name="number" />
+          <InputField id="number" type="tel" name="number" />
           <ErrorMessage name="number" component="div" />
         </FormLabel>
-        <FormBtn type={'submit'}>Add contact</FormBtn>
+        <FormBtn type="submit">Add contact</FormBtn>
       </Form>
     </Formik>
   );
