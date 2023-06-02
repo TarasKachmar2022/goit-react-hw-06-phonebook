@@ -21,6 +21,8 @@ export const ContactContainer = styled.div`
   }
   @media screen and (min-width: 768px) {
     display: flex;
+  }
+  @media screen and (min-width: 1280px) {
     flex-direction: row;
   }
 `;
