@@ -6,17 +6,22 @@ import {
   Form,
   FormLabel,
   FormLabelSpan,
+  FormLabelIcon,
+  FormBtnText,
   InputField,
   ErrorMessage,
   FormBtn,
 } from './ContactForm.styled';
 import { addContact } from 'redux/contactsSlice';
+import { BsTelephoneFill } from 'react-icons/bs';
+import { FaUser } from 'react-icons/fa';
+import { IoMdPersonAdd } from 'react-icons/io';
 
 // const PATTERN_FOR_NAME =
 //   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 
 // const PATTERN_FOR_TEL =
-//   /+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}/;
+//   '/+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}/';
 
 const schema = yup.object().shape({
   // Приклад:
@@ -71,16 +76,40 @@ const ContactForm = () => {
     >
       <Form>
         <FormLabel htmlFor="name">
-          <FormLabelSpan>Name</FormLabelSpan>
-          <InputField id="name" type="text" name="name" />
+          <FormLabelSpan>
+            <FormLabelIcon>
+              <FaUser />
+            </FormLabelIcon>
+            Name
+          </FormLabelSpan>
+          <InputField
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Enter name"
+          />
           <ErrorMessage name="name" component="div" />
         </FormLabel>
         <FormLabel htmlFor="number">
-          <FormLabelSpan>Number</FormLabelSpan>
-          <InputField id="number" type="tel" name="number" />
+          <FormLabelSpan>
+            <FormLabelIcon>
+              <BsTelephoneFill />
+            </FormLabelIcon>
+            Number
+          </FormLabelSpan>
+          <InputField
+            id="number"
+            type="tel"
+            name="number"
+            placeholder="+38(012)345-67-89"
+            // pattern={PATTERN_FOR_TEL}
+          />
           <ErrorMessage name="number" component="div" />
         </FormLabel>
-        <FormBtn type="submit">Add contact</FormBtn>
+        <FormBtn type="submit">
+          <IoMdPersonAdd />
+          <FormBtnText>Add contact</FormBtnText>
+        </FormBtn>
       </Form>
     </Formik>
   );

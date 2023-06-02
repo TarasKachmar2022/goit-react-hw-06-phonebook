@@ -1,10 +1,9 @@
-// import { useEffect, useState } from 'react';
 import { GlobalStyle } from '../../styled/globalStyle';
 import { Layout } from '../Layout/Layout';
 import ContactForm from '../ContactForm';
 import ContactsFilter from '../ContactsFilter';
 import ContactList from '../ContactList';
-import { FindContactsByName, MainBlock } from './App.styled';
+import { MainBlock, MainTitle, Title } from './App.styled';
 
 // const LS_KEY = 'contact_items';
 
@@ -29,14 +28,12 @@ const App = () => {
   return (
     <Layout>
       <MainBlock>
-        <h1>Phonebook</h1>
+        <MainTitle>Phonebook</MainTitle>
         <ContactForm />
-        <h2>Contacts</h2>
-        <FindContactsByName>Find contacts by name</FindContactsByName>
+        <Title>Contacts</Title>
         <ContactsFilter />
         <ContactList />
         <GlobalStyle />
-        <div></div>
       </MainBlock>
     </Layout>
   );

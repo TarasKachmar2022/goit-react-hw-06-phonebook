@@ -12,6 +12,12 @@ export const MainBlock = styled.div`
   box-shadow: rgb(0, 0, 0) 0px 0px 80px;
 `;
 
-export const FindContactsByName = styled.p`
-  margin-bottom: 5px;
+export const MainTitle = styled.h1`
+  font-size: 48px;
+  text-shadow: ${p => p.theme.shadows.textShadow};
+`;
+
+export const Title = styled.h2`
+  font-size: 38px;
+  text-shadow: ${p => p.theme.shadows.textShadow};
 `;

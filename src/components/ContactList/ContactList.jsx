@@ -16,13 +16,7 @@ const ContactList = () => {
   return (
     <List>
       {visibleContacts.map(({ id, name, number }) => (
-        <ContactCard
-          key={id}
-          id={id}
-          name={name}
-          number={number}
-          // onDelete={deleteContacts(id)}
-        />
+        <ContactCard key={id} id={id} name={name} number={number} />
       ))}
     </List>
   );

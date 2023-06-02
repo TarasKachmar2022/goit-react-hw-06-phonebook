@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  list-style: inside;
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  max-width: 100%;
+  width: 450px;
 `;

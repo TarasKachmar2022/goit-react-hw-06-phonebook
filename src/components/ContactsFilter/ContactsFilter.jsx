@@ -18,6 +18,7 @@ const ContactsFilter = () => {
       type="text"
       value={filter}
       onChange={changeFilterValue}
+      placeholder="Find contacts by name"
     ></FilterInput>
   );
 };
