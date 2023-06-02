@@ -6,5 +6,15 @@ export const List = styled.ul`
   gap: 10px;
   list-style: none;
   max-width: 100%;
-  width: 450px;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 320px) {
+    width: 290px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 450px;
+  }
 `;

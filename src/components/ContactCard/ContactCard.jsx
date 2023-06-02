@@ -2,15 +2,22 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { IoPersonRemove } from 'react-icons/io5';
 import { deleteContact } from '../../redux/contactsSlice';
-import { ContactItem, DeleteBtn } from './ContactCard.styled';
+import {
+  ContactItem,
+  ContactContainer,
+  ContactTitle,
+  DeleteBtn,
+} from './ContactCard.styled';
 
 const ContactCard = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
     <ContactItem>
-      <span>{name}:</span>
-      <span>{number}</span>
+      <ContactContainer>
+        <ContactTitle>{name}:</ContactTitle>
+        <ContactTitle>{number}</ContactTitle>
+      </ContactContainer>
       <DeleteBtn type="button" onClick={() => dispatch(deleteContact(id))}>
         <IoPersonRemove />
       </DeleteBtn>
