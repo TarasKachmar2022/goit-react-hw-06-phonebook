@@ -5,26 +5,7 @@ import ContactsFilter from '../ContactsFilter';
 import ContactList from '../ContactList';
 import { MainBlock, MainTitle, Title } from './App.styled';
 
-// const LS_KEY = 'contact_items';
-
-// const getInitialContacts = () => {
-//   const savedContacts = JSON.parse(localStorage.getItem(LS_KEY));
-
-//   if (savedContacts !== null) {
-//     return savedContacts;
-//   } else {
-//     return initialState;
-//   }
-// };
-
 const App = () => {
-  // const [contacts, setContacts] = useState(getInitialContacts);
-  // const [filter, setFilter] = useState('');
-
-  // useEffect(() => {
-  //   localStorage.setItem(LS_KEY, JSON.stringify(contacts));
-  // }, [contacts]);
-
   return (
     <Layout>
       <MainBlock>

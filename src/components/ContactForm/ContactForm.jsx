@@ -45,7 +45,6 @@ const ContactForm = () => {
 
   const contacts = useSelector(state => state.contacts.contacts);
   const dispatch = useDispatch();
-  console.log(contacts);
 
   const handleSubmit = (values, { resetForm }) => {
     const findContacts = contacts.find(

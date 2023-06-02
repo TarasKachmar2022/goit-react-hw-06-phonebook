@@ -50,8 +50,6 @@ export const FormLabel = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
-  /* font-size: 16px;
-  text-shadow: 0 0.4px 0.4px #000; */
 `;
 
 export const InputField = styled(Field)`

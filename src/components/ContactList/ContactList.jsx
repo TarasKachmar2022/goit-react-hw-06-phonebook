@@ -6,13 +6,12 @@ import { List } from './ContactList.Styled';
 const ContactList = () => {
   const contacts = useSelector(state => state.contacts.contacts);
   const fromFilter = useSelector(state => state.filter);
-  console.log(contacts);
 
   const normalize = fromFilter.toLowerCase();
   const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalize)
   );
-  console.log(visibleContacts);
+
   return (
     <List>
       {visibleContacts.map(({ id, name, number }) => (

@@ -14,9 +14,6 @@ export const MainBlock = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border-radius: 5px; */
-    /* padding: 20px; */
-
     width: 440px;
   }
   @media screen and (min-width: 1280px) {
