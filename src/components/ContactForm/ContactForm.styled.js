@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {
   Form as FormikForm,
   ErrorMessage as FormikErrorMessage,
-  Formik,
   Field,
 } from 'formik';
 
@@ -31,6 +30,7 @@ export const FormLabelSpan = styled.span`
     margin-bottom: 5px;
   }
   @media screen and (min-width: 768px) {
+    font-size: 21px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 24px;
@@ -99,6 +99,9 @@ export const FormBtn = styled.button`
     padding: 7px 15px;
   }
   @media screen and (min-width: 768px) {
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 9px 18px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 18px;

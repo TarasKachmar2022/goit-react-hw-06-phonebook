@@ -6,6 +6,7 @@ import {
   ContactItem,
   ContactContainer,
   ContactTitle,
+  ContactNumber,
   DeleteBtn,
 } from './ContactCard.styled';
 
@@ -16,7 +17,7 @@ const ContactCard = ({ id, name, number }) => {
     <ContactItem>
       <ContactContainer>
         <ContactTitle>{name}:</ContactTitle>
-        <ContactTitle>{number}</ContactTitle>
+        <ContactNumber>{number}</ContactNumber>
       </ContactContainer>
       <DeleteBtn type="button" onClick={() => dispatch(deleteContact(id))}>
         <IoPersonRemove />

@@ -37,6 +37,8 @@ export const MainTitle = styled.h1`
     margin-top: 10px;
   }
   @media screen and (min-width: 768px) {
+    font-size: 42px;
+    margin-top: 28px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 48px;
@@ -50,6 +52,7 @@ export const Title = styled.h2`
     font-size: 32px;
   }
   @media screen and (min-width: 768px) {
+    font-size: 34px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 38px;
