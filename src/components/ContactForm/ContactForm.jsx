@@ -16,6 +16,7 @@ import { addContact } from 'redux/contactsSlice';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
 import { IoMdPersonAdd } from 'react-icons/io';
+import numberFormat from '../../utils/numberFormat';
 
 // const PATTERN_FOR_NAME =
 //   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
@@ -60,7 +61,7 @@ const ContactForm = () => {
     const newContact = {
       id: nanoid(),
       name: values.name,
-      number: values.number,
+      number: numberFormat(values.number),
     };
 
     dispatch(addContact(newContact));
@@ -102,7 +103,6 @@ const ContactForm = () => {
             type="tel"
             name="number"
             placeholder="+38(012)345-67-89"
-            // pattern={PATTERN_FOR_TEL}
           />
           <ErrorMessage name="number" component="div" />
         </FormLabel>
