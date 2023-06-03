@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FilterInput = styled.input`
+  background-color: rgba(255, 255, 255, 80%);
   line-height: 1.5;
   padding-left: 10px;
   border-radius: 7px;

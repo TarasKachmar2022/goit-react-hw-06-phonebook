@@ -5,4 +5,4 @@ const contacts = [
   { id: 'id-4', name: 'Annie Copeland', number: '+38(063)227-91-26' },
 ];
 
-export default initialContacts;
+export default contacts;

@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(https://pixabay.com/get/g8b14361094644da3bbe045c3851cbed948124f1cc966d2320145791b53bf1043f61232cc04dfc778850b7c9d8616b4ae2885cf33c456fe0fd99a3878f16c5fe4_1280.jpg) 0 0 / cover no-repeat;
+  background: url('https://pixabay.com/get/ge6dbfbaebfb20b5f06585f5b8bba7936a04624f709ca0a5cbf689d380aafe2fa5bb8bbd4aec09c190852dd606c2d9e8fd11cdc07fd1643c55bb2e34f1a859933_1280.jpg') 0 0 / cover no-repeat;
   background-attachment: fixed;
 }
 
