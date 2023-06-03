@@ -84,6 +84,7 @@ export const FormBtn = styled.button`
   color: ${p => p.theme.colors.white};
   background-color: ${p => p.theme.colors.darkGrey};
   transition: background-color 250ms linear;
+
   :hover {
     background-color: ${p => p.theme.colors.orange};
   }
