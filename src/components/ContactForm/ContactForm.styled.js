@@ -42,6 +42,7 @@ export const FormLabelIcon = styled.div`
   margin: 0 10px;
 
   & svg {
+    font-size: 18px;
     filter: drop-shadow(0 0 5px #fff);
   }
 `;

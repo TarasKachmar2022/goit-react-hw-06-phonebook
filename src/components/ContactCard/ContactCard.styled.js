@@ -21,6 +21,7 @@ export const ContactContainer = styled.div`
   }
   @media screen and (min-width: 768px) {
     display: flex;
+    align-items: start;
   }
   @media screen and (min-width: 1280px) {
     flex-direction: row;
@@ -33,12 +34,13 @@ export const ContactTitle = styled.span`
     font-weight: 600;
   }
   @media screen and (min-width: 768px) {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
   }
   @media screen and (min-width: 1280px) {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
+    align-self: center;
   }
 `;
 
@@ -54,7 +56,7 @@ export const ContactNumber = styled.span`
   @media screen and (min-width: 1280px) {
     font-size: 20px;
     font-weight: 600;
-    margin-left: 30px;
+    margin-left: 10px;
   }
 `;
 

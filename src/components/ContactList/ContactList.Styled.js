@@ -12,9 +12,9 @@ export const List = styled.ul`
     width: 290px;
   }
   @media screen and (min-width: 768px) {
-    width: 400px;
+    width: 450px;
   }
   @media screen and (min-width: 1280px) {
-    width: 450px;
+    width: 550px;
   }
 `;
