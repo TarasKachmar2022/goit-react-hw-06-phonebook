@@ -17,22 +17,9 @@ import { BsTelephoneFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
 import { IoMdPersonAdd } from 'react-icons/io';
 import numberFormat from '../../utils/numberFormat';
-
-// const PATTERN_FOR_NAME =
-//   /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
-
-// const PATTERN_FOR_TEL =
-//   '/+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}/';
+import { selectContacts } from '../../redux/selectors';
 
 const schema = yup.object().shape({
-  // Приклад:
-  // name: yup
-  //   .string()
-  //   .matches(
-  //     PATTERN_FOR_NAME,
-  //     "Заповніть коректно поле! Допустимі символи [a-zA-Zа-яА-Я] та ['][ ][-] але лише всередині тексту!"
-  //   )
-  //   .required("Поле обов'язкове для заповнення!"),
   name: yup.string().required(),
   number: yup.number().required(),
 });
@@ -43,7 +30,7 @@ const ContactForm = () => {
     number: '',
   };
 
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
